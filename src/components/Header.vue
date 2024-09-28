@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <template>
     <nav>
-        <ul class="menu flex p-[10px] w-[100vw] [&>a>li]:text-[22px] align-items-center [&>a>li]:mt-[20px] [&>a>li]:text-[#424242] gap-10 bg-white border-b border-black">
+        <ul class="menu bg-[#F5F5F5] flex p-[10px] w-[100vw] [&>a>li]:text-[22px] align-items-center [&>a>li]:mt-[20px] [&>a>li]:text-[#424242] gap-10 border-b border-black">
 
             <div class=" bg-black w-[80px] h-[80px] rounded-[50px] border-solid border-[5px] border-[rgb(255,166,128)]">
                 <img src="../assets/img/lotus-978659_1280.jpg" alt="" class=" object-cover bg-center bg-no-repeat rounded-[50px] w-[100%] h-[100%]">
