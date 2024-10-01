@@ -1,25 +1,43 @@
 <script setup>
+import Cards from './Cards.vue';
 import Tittle from './Tittle.vue';
 
 document.addEventListener('DOMContentLoaded', function(){
+    //Tittle
     const basicAlgoritms = document.getElementById("algoritmos-basicos");
     const intermediateAlgoritms = document.getElementById("algoritmos-intermedios");
     const technicalTest = document.getElementById("pruebas-tecnicas");
 
     const bodyTittle = document.getElementById("tittle");
 
+    const basicAlgortimsSection = document.querySelector(".basic-algoritms-section");
+    const intermediateAlgoritmsSection = document.querySelector(".intermediate-algoritms-section");
+    const technicalTestSection = document.querySelector(".technical-test-section");
+
+    intermediateAlgoritmsSection.style.display = "none";
+    technicalTestSection.style.display = "none";
+
     basicAlgoritms.addEventListener("click", function(e){
         bodyTittle.textContent = "Algoritmos Basicos";
+        basicAlgortimsSection.style.display = "";
+        intermediateAlgoritmsSection.style.display = "none";
+        technicalTestSection.style.display = "none";
     });
 
     intermediateAlgoritms.addEventListener("click", function(e){
         bodyTittle.textContent = "Algoritmos Intermedios";
+        basicAlgortimsSection.style.display = "none";
+        intermediateAlgoritmsSection.style.display = "";
     });
 
     technicalTest.addEventListener("click", function(e){
         bodyTittle.textContent = "Pruebas Tecnicas";
+        technicalTestSection.style.display = "";
+        basicAlgortimsSection.style.display = "none";
+        intermediateAlgoritmsSection.style.display = "none";
     });
 });
+
 </script>
 
 <template>
@@ -66,4 +84,12 @@ document.addEventListener('DOMContentLoaded', function(){
 .menu a:hover::before {
     transform: scaleX(1);
 }
+
+.hidden{
+    display: none;
+}
+
+/* .show{
+    display: block;
+} */
 </style>

@@ -1,4 +1,5 @@
 <script>
+
 import {
   firstAlgoritm, secondAlgoritm, thirdAlgoritm,
   fourthAlgoritm, fifthAlgoritm, sixthAlgoritm,
@@ -7,30 +8,29 @@ import {
   thirteenthAlgoritm, fourteenthAlgoritm, fifteenthAlgoritm,
   sixteenthAlgoritm, seventeenthAlgoritm, eighteenthAlgoritm,
   nineteenthAlgoritm, twentiethAlgortim
-} from "./algoritmos_basicos.js";
+} from "./js/algoritmos_basicos.js";
 
 import { onMounted } from 'vue';
-
-
 
 export default {
   setup() {
     // Función que ajusta las columnas del grid
     const adjustGridColumns = () => {
-      const gridContainer = document.getElementById("grid-container");
-      if (gridContainer) {
-        const screenWidth = window.innerWidth;
-        gridContainer.classList.remove('grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-6');
+    const gridContainers = document.querySelectorAll(".grid-container"); // Selecciona todos los elementos
+    const screenWidth = window.innerWidth;
 
-        if (screenWidth < 1000) {
-          gridContainer.classList.add('grid-cols-1');
-        } else if (screenWidth >= 1000 && screenWidth < 1300) {
-          gridContainer.classList.add('grid-cols-2');
-        } else {
-          gridContainer.classList.add('grid-cols-3');
-        }
-      }
-    };
+    gridContainers.forEach(gridContainer => {
+    gridContainer.classList.remove('grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-6');
+
+    if (screenWidth < 1000) {
+      gridContainer.classList.add('grid-cols-1');
+    } else if (screenWidth >= 1000 && screenWidth < 1300) {
+      gridContainer.classList.add('grid-cols-2');
+    } else {
+      gridContainer.classList.add('grid-cols-3');
+    }
+  });
+};
 
     onMounted(() => {
       adjustGridColumns();
@@ -53,7 +53,7 @@ export default {
 
 <template>
   <!--Cards Container-->
-  <div class="w-[90vw] m-auto grid grid-cols-3 gap-5 p-4" id="grid-container">
+  <section class="basic-algoritms-section grid-container w-[90vw] m-auto grid grid-cols-3 gap-5 p-4">
     <!-- Cards-->
     <!-- firstAlgoritm -->
     <div
@@ -531,8 +531,68 @@ export default {
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
+  <!-- Intermediate Algoritms -->
+  <!-- Intermediate Algoritms -->
+  <!-- Intermediate Algoritms -->
+  <section class="intermediate-algoritms-section grid-container w-[90vw] m-auto grid grid-cols-3 gap-5 p-4">
+    <div
+      class="card bg-[#F5F5F5] h-[440px] w-[100%] relative rounded-[30px] border-solid border-[1px] border-[#cecece]">
+      <img src="../assets/img/LogoSENA-naranja_PNG-1839613.webp" alt=""
+        class=" object-cover h-[100%] w-[100%] absolute z-1">
+      <div
+        class="card-content relative z-[3] opacity-0 h-full translate-y-[30px] transition-all duration-500 flex flex-col text-center p-[8px] gap-[15px]">
+        <h3 class=" text-[35px] m-[5px] font-semibold text-[#424242]">Imprimir "Hola, mundo!"</h3>
+        <p class="text-[16px] text-[#424242]">
+          Este algoritmo simple consiste en mostrar el texto "Hola, mundo!" en la pantalla. Normalmente
+          se utiliza para verificar que el entorno de programación esté configurado correctamente y, existen varias
+          formar de
+          mostrar un valor, como pueden ser console.log() que imprime en la consola del navegador o document.write() que
+          muestra
+          lo que desees directamente en el documento HTML. Para este ejemplo estamos usando alert("Hola, mundo!"), que
+          imprime el valor en una pequeña
+          ventana modal.
+        </p>
+        <div
+          class="bg-[#424242] text-white border-none rounded-[10px] text-[20px] m-auto pt-[4px] pb-[4px] pl-[16px] pr-[16px] transition-[.5s] hover:cursor-pointer hover:bg-[#8d8d8d]">
+          <button @click="firstAlgoritm()">Testear</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Test -->
+  <!-- Technical Test -->
+  <!-- Technical Test -->
+  <section class="technical-test-section grid-container w-[90vw] m-auto grid grid-cols-3 gap-5 p-4">
+    <div
+      class="card bg-[#F5F5F5] h-[440px] w-[100%] relative rounded-[30px] border-solid border-[1px] border-[#cecece]">
+      <img src="../assets/img/LogoSENA-naranja_PNG-1839613.webp" alt=""
+        class=" object-cover h-[100%] w-[100%] absolute z-1">
+      <div
+        class="card-content relative z-[3] opacity-0 h-full translate-y-[30px] transition-all duration-500 flex flex-col text-center p-[8px] gap-[15px]">
+        <h3 class=" text-[35px] m-[5px] font-semibold text-[#424242]">POKEDEX</h3>
+        <p class="text-[16px] text-[#424242]">
+          Este algoritmo simple consiste en mostrar el texto "Hola, mundo!" en la pantalla. Normalmente
+          se utiliza para verificar que el entorno de programación esté configurado correctamente y, existen varias
+          formar de
+          mostrar un valor, como pueden ser console.log() que imprime en la consola del navegador o document.write() que
+          muestra
+          lo que desees directamente en el documento HTML. Para este ejemplo estamos usando alert("Hola, mundo!"), que
+          imprime el valor en una pequeña
+          ventana modal.
+        </p>
+        <div
+          class="bg-[#424242] text-white border-none rounded-[10px] text-[20px] m-auto pt-[4px] pb-[4px] pl-[16px] pr-[16px] transition-[.5s] hover:cursor-pointer hover:bg-[#8d8d8d]">
+          <a href="../components/Pokedex.vue">
+            <button>Testear</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </template>
 
 <style scoped>
@@ -558,5 +618,9 @@ export default {
 .card:hover .card-content {
   opacity: 1;
   transform: translateY(0px);
+}
+
+.hidden {
+  display: none;
 }
 </style>
